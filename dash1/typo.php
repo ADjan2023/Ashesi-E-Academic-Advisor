@@ -673,7 +673,7 @@ if(isset($_SESSION['email'])) {
 
               </div>
             </div>
-          </div>
+          
           <div class="card">
                                     <div class="card-header">
                                         <strong>Feedback</strong> Form
@@ -695,7 +695,7 @@ if(isset($_SESSION['email'])) {
                                                 </div>
                                                 <div class="col-12 col-md-9">
                                                     <textarea name="textarea-input" id="textarea-input" rows="9" placeholder="Type your feedback on the course if you have taken it..." class="form-control"></textarea>
-                                                    <span class="help-block">Please enter your password</span>
+                                                    
                                                 </div>
                                             </div>
                                         </form>
@@ -703,9 +703,6 @@ if(isset($_SESSION['email'])) {
                                     <div class="card-footer">
                                         <button type="submit" class="btn btn-primary btn-sm">
                                             <i class="fa fa-dot-circle-o"></i> Submit
-                                        </button>
-                                        <button type="reset" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-ban"></i> Reset
                                         </button>
                                     </div>
                                 </div>

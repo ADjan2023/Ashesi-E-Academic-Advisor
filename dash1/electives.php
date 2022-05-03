@@ -542,7 +542,7 @@ if(isset($_SESSION['email'])) {
                                         <thead>
                                             <tr >
                                                 
-                                                <th>Course Name</th>
+                                                <th>Name of Elective</th>
                                                 <th></th>
                                                 
                                             </tr>
