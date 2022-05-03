@@ -213,6 +213,10 @@ if(isset($_SESSION['email'])) {
                             <a href="form.php">
                                 <i class="fas fa-table"></i>Google Tech News</a>
                         </li>
+                        <li>
+                            <a href="">
+                                <i class="fas fa-copy"></i>ASH DA</a>
+                        </li>
                         <!-- <li>
                             <a href="calendar.html">
                                 <i class="fas fa-calendar-alt"></i>Calendar</a>
