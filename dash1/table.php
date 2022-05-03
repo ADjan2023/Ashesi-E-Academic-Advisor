@@ -214,7 +214,7 @@ if(isset($_SESSION['email'])) {
                                 <i class="fas fa-table"></i>Google Tech News</a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="ASH.php">
                                 <i class="fas fa-copy"></i>ASH DA</a>
                         </li>
                         <!-- <li>
