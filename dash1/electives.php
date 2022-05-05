@@ -559,6 +559,7 @@ if(isset($_SESSION['email'])) {
         while($data = mysqli_fetch_array($records1)){//While loop to print out data in a table form
         $cid=  $data['Course_Id'];  
 
+
        //While loop to print out data in a table form
   ?>
                                             <tr>
@@ -592,7 +593,42 @@ if(isset($_SESSION['email'])) {
                                 </div>
                             </div>
                                     
-        
+        <?php
+              ob_start();
+      include "dbconnect.php"; // Using database connection file here
+      ob_end_clean();
+    
+      $result="";
+      if(isset($_POST['info'])){
+             $_SESSION['CID']=$_POST['cid'];
+             
+                    
+                    
+
+    
+        $records1 = mysqli_query($db,"SELECT * FROM electives where (`Course_Id`= '$cid') "); // fetch data from database
+        if($records1){
+        while($data = mysqli_fetch_array($records1)){//While loop to print out data in a table form
+        $_SESSION['Cname']=  $data['Courses']; 
+       
+        }}
+ 
+}
+if(isset($_POST['feedback'])){
+    $feed = $_POST['textarea-input'];
+    $insert = mysqli_query($db,"INSERT INTO `feedbacktable`(`course_id`, `feedback`) VALUES ('$cid','$feed')");
+     if($insert){
+        $result="Your feedback has been added";
+     }
+     else{
+        $result = "Your feedback has noot been added";
+     }
+ }
+
+
+
+       //While loop to print out data in a table form
+  ?>
 
             <!-- END MAIN CONTENT-->
             <!-- END PAGE CONTAINER-->
