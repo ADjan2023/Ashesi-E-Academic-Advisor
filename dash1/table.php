@@ -556,7 +556,7 @@ if(isset($_SESSION['email'])) {
       //Table to show users chores
 
          $cid="";
-          if(isset($_POST['interest']) || isset($_POST['interest'])|| isset($_POST['interest'])|| isset($_POST['interest'])|| isset($_POST['interest'])|| isset($_POST['interest'])|| isset($_POST['interest'])){
+          if(isset($_POST['interest'])){
             $interest=$_POST['int'];
         $records1 = mysqli_query($db,"SELECT * FROM electives WHERE Interests LIKE '%$interest%' "); // fetch data from database
         if($records1){
