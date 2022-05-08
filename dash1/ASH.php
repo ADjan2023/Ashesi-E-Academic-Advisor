@@ -534,8 +534,13 @@ if(isset($_SESSION['email'])) {
             <!-- HEADER DESKTOP-->
 
             <!-- MAIN CONTENT-->
-            
-
+             <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+            <button type="button" class="btn btn-primary btn-lg active">Primary</button>
+            </div>
+        </div>
+    </div>
             <!-- END MAIN CONTENT-->
             <!-- END PAGE CONTAINER-->
         </div>
