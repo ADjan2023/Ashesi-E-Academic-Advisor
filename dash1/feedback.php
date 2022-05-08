@@ -547,7 +547,7 @@ if(isset($_SESSION['email'])) {
                                         <strong>Feedback</strong> Form
                                     </div>
                                     <div class="card-body card-block">
-                                        <form  method="POST" class="form-horizontal">
+                                        <form  method="POST" class="form-horizontal" >
                                             <div class="row form-group">
                                                
                                             
