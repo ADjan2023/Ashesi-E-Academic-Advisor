@@ -665,8 +665,8 @@ if(isset($_SESSION['email'])) {
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
+                        
+                         
                                 <div class="card">
                                     <div class="card-header">
                                         <i class="mr-2 fa fa-align-justify"></i>
@@ -675,33 +675,39 @@ if(isset($_SESSION['email'])) {
                                     <div class="card-body">
 
                                         <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-secondary mb-1" data-toggle="modal"  onclick="location.href = 'table.php';">
-                                            Mobile
-                                        </button>
-                                        <button type="button" class="btn btn-secondary mb-1" data-toggle="modal" onclick="return confirm('Do you want to view courses based on selected interest')">
-                                            Cloud
-                                        </button>
-                                        <button type="button" class="btn btn-secondary mb-1" data-toggle="modal" onclick="return confirm('Do you want to view courses based on selected interest')">
-                                            AI
-                                        </button>
-                                        <button type="button" class="btn btn-secondary mb-1" data-toggle="modal" onclick="return confirm('Do you want to view courses based on selected interest')">
-                                            Robotics
-                                        </button>
-                                        <button type="button" class="btn btn-secondary mb-1" data-toggle="modal" onclick="return confirm('Do you want to view courses based on selected interest')">
-                                            Data Science
-                                        </button>
-                                        <button type="button" class="btn btn-secondary mb-1" data-toggle="modal" onclick="return confirm('Do you want to view courses based on selected interest')">
-                                            African Politics
-                                        </button>
-                                        <button type="button" class="btn btn-secondary mb-1" data-toggle="modal" onclick="return confirm('Do you want to view courses based on selected interest')">
-                                            African Culture
-                                        </button>
-                                        <button type="button" class="btn btn-secondary mb-1" data-toggle="modal" onclick="return confirm('Do you want to view courses based on selected interest')">
-                                            Data Security
+                                        <form method="Post" action="table.php">
+                                            <input type="hidden" name="int"  value="Mobile">
+                                        <input type="submit" class="btn btn-secondary mb-1" data-toggle="modal" value="Mobile" name='interest'>
+                                        </form>
+                                         <form method="Post" action="table.php">
+                                            <input type="hidden" name="int"  value="Cloud">
+                                        <input type="submit" class="btn btn-secondary mb-1" data-toggle="modal" value="Cloud" name='interest'>
+                                        </form>
+                                         <form method="Post" action="table.php">
+                                            <input type="hidden" name="int"  value="AI">
+                                        <input type="submit" class="btn btn-secondary mb-1" data-toggle="modal" value="AI" name='interest'>
+                                        </form>
+                                         <form method="Post" action="table.php">
+                                            <input type="hidden" name="int"  value="Data Science">
+                                        <input type="submit" class="btn btn-secondary mb-1" data-toggle="modal" value="Data Science" name='interest'>
+                                        </form>
+                                        <form method="Post" action="table.php">
+                                            <input type="hidden" name="int"  value="Data Security">
+                                        <input type="submit" class="btn btn-secondary mb-1" data-toggle="modal" value="Data Security" name='interest'>
+                                        </form>
+                                        <form method="Post" action="table.php">
+                                            <input type="hidden" name="int"  value="African Politics">
+                                        <input type="submit" class="btn btn-secondary mb-1" data-toggle="modal" value="African Politics" name='interest'>
+                                        </form>
+                                         <form method="Post" action="table.php">
+                                            <input type="hidden" name="int"  value="African Culture">
+                                        <input type="submit" class="btn btn-secondary mb-1" data-toggle="modal" value="African Culture" name='interest'>
+                                        </form>
+                                        
                                         </button>
                                         
-                                    </div>
-                                </div>
+                                    
+                                
                             </div>
                         </div>
 

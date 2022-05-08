@@ -533,7 +533,7 @@ if(isset($_SESSION['email'])) {
             </header>
             <!-- HEADER DESKTOP-->
 
-            <!-- MAIN CONTENT-->
+               <!-- MAIN CONTENT-->
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
@@ -541,28 +541,57 @@ if(isset($_SESSION['email'])) {
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
                                             <tr >
-                                                <th>date</th>
-                                                <th>order ID</th>
-                                                <th>name</th>
-                                                <th class="text-right">price</th>
-                                                <th class="text-right">quantity</th>
-                                                <th class="text-right">total</th>
+                                                
+                                                <th>Name of Elective</th>
+                                                <th></th>
+                                                <th></th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php
+              ob_start();
+      include "dbconnect.php"; // Using database connection file here
+      ob_end_clean();
+      //Table to show users chores
+
+         $cid="";
+          if(isset($_POST['interest']) || isset($_POST['interest'])|| isset($_POST['interest'])|| isset($_POST['interest'])|| isset($_POST['interest'])|| isset($_POST['interest'])|| isset($_POST['interest'])){
+            $interest=$_POST['int'];
+        $records1 = mysqli_query($db,"SELECT * FROM electives WHERE Interests LIKE '%$interest%' "); // fetch data from database
+        if($records1){
+        while($data = mysqli_fetch_array($records1)){//While loop to print out data in a table form
+        $cid=  $data['Course_Id'];  
+
+
+       //While loop to print out data in a table form
+  ?>
                                             <tr>
-                                                <td>2018-09-29 05:57</td>
-                                                <td>100398</td>
-                                                <td>iPhone X 64Gb Grey</td>
-                                                <td class="text-right">$999.00</td>
-                                                <td class="text-right">1</td>
-                                                <td class="text-right">
-                                                    <div class="table-data-feature">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send" onclick="location.href = 'typo.php';">
-                                                            <i class="zmdi zmdi-mail-send"></i>
-                                                        </button>
+                                                <td><?php echo $data['Courses'];  ?></td>
+                                                
+                                                <td >
+                                                    <form method="POST" action = "typo.php" >
+                                                        <input type="hidden" name="cid"  value="<?php echo $data['Course_Id'];  ?>">
+                                                        <input type="submit" name= "info" value="View more info" class="btn btn-secondary mb-1" data-toggle="tooltip" data-placement="top" title="More info" >
+                                                           
+                                                                
+                                                            
+                                                            
+                                                        
+                                                       </form>
                                                     
-                                                    </div>
+                                                </td>
+                                                <td >
+                                                    <form method="POST" action = "feedback.php" >
+                                                        <input type="hidden" name="courseid"  value="<?php echo $data['Course_Id'];  ?>">
+                                                        <input type="submit" name= "feed" value="Add Feedback" class="btn btn-secondary mb-1" data-toggle="tooltip" data-placement="top" title="Add Feedback" >
+                                                           
+                                                                
+                                                            
+                                                            
+                                                        
+                                                       </form>
+                                                    
                                                 </td>
                                             </tr>
                                            
@@ -572,11 +601,17 @@ if(isset($_SESSION['email'])) {
                                             
                                            
                                         </tbody>
+                                        <?php
+         
+}}
+}
+
+?>
                                     </table>
                                 </div>
-                            </div>
+                                             </div>
                                     
-        
+
 
             <!-- END MAIN CONTENT-->
             <!-- END PAGE CONTAINER-->
