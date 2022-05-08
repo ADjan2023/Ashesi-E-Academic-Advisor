@@ -4,9 +4,7 @@ session_start();
 if(isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
     $id=  $_SESSION['ID'];
-    $cid= $_SESSION['CID'];
-    $cname = $_SESSION['Cname'];
-
+    
 
 } else {
     header("location:../index.php"); // redirects to viewbooking page
@@ -550,9 +548,36 @@ if(isset($_SESSION['email'])) {
                        </strong>
                   </div>
 
+ 
                   <div class="card-body">
                     <div class="typo-headers">
-                      <h1 class="pb-2 display-4"><?php echo $cname; ?></h1>
+                      <h1 class="pb-2 display-4"> <?php
+              
+    ob_start();
+       include "../dbconnect.php"; // Using database connection file here
+        ob_end_clean();
+     
+      if(isset($_POST['info'])){
+        $cid=$_POST['cid'];
+            
+          
+        $records1 = mysqli_query($db,"SELECT * FROM electives where (`Course_Id`= '$cid') "); // fetch data from database
+        if($records1){
+           
+        while($data = mysqli_fetch_array($records1)){
+            
+            
+         echo $data['Courses']; 
+       
+        }}
+         
+
+
+}
+
+
+       //While loop to print out data in a table form
+  ?></h1>
                       <h2 class="pb-2 display-5">Sections & Modal Names H2</h2>
                       <h3 class="pb-2 display-5">Articles & Block Headings H3</h3>
                       <h4 class="pb-2 display-5">Random Tiny Heading H4</h4>
@@ -660,58 +685,11 @@ if(isset($_SESSION['email'])) {
 
               </div>
             </div>
-          
+            
+  
+ 
 
-        <?php
-              ob_start();
-      include "dbconnect.php"; // Using database connection file here
-      ob_end_clean();
-    
-      $result="";
-if(isset($_POST['feedback'])){
-    $feed = $_POST['textarea-input'];
-    $insert = mysqli_query($db,"INSERT INTO `feedbacktable`(`course_id`, `feedback`) VALUES ('$cid','$feed')");
-     if($insert){
-        $result="Your feedback has been added";
-     }
-     else{
-        $result = "Your feedback has noot been added";
-     }
- }
-
-
-
-       //While loop to print out data in a table form
-  ?>
-
-          <div class="card">
-                                    <div class="card-header">
-                                        <strong>Feedback</strong> Form
-                                    </div>
-                                    <div class="card-body card-block">
-                                        <form  method="POST" class="form-horizontal">
-                                            <div class="row form-group">
-                                               
-                                            
-                                            </div>
-                                            <div class="row form-group">
-                                                <div class="col col-md-3">
-                                                    <label for="hf-password" class=" form-control-label">Enter your feedback:</label>
-                                                </div>
-                                                <div class="col-12 col-md-9">
-                                                    <textarea name="textarea-input" id="textarea-input" rows="9" placeholder="Type your feedback on the course if you have taken it..." class="form-control"></textarea>
-                                                    
-                                                </div>
-                                            </div>
-                                             <div class="card-footer">
-                                        <input type="submit" name="feedback" class="btn btn-primary btn-sm">
-                                         
-                                    </div>
-                                    <h6 ><?php echo $result; ?></h6>
-                                        </form>
-                                    </div>
-                                   
-                                </div>
+         
         </div>
 
       </div>

@@ -4,6 +4,7 @@ session_start();
 if(isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
     $id=  $_SESSION['ID'];
+    
 
 } else {
     header("location:../index.php"); // redirects to viewbooking page
@@ -535,79 +536,85 @@ if(isset($_SESSION['email'])) {
 
             <!-- MAIN CONTENT-->
             <div class="main-content">
-                <div class="section__content section__content--p30">
-                    <div class="container-fluid">
-                         <div class="table-responsive table--no-card m-b-30">
-                                    <table class="table table-borderless table-striped table-earning">
-                                        <thead>
-                                            <tr >
-                                                
-                                                <th>Name of Elective</th>
-                                                <th></th>
-                                                <th></th>
-                                                
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-              ob_start();
-      include "dbconnect.php"; // Using database connection file here
-      ob_end_clean();
-      //Table to show users chores
-        $cid="";
-        $records1 = mysqli_query($db,"SELECT * FROM electives "); // fetch data from database
-        if($records1){
-        while($data = mysqli_fetch_array($records1)){//While loop to print out data in a table form
-        $cid=  $data['Course_Id'];  
+        <div class="section__content section__content--p30">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+
+
+                 <div class="card">
+                                    <div class="card-header">
+                                        <strong>Feedback</strong> Form
+                                    </div>
+                                    <div class="card-body card-block">
+                                        <form  method="POST" class="form-horizontal">
+                                            <div class="row form-group">
+                                               
+                                            
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="hf-password" class=" form-control-label">Enter your feedback:</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <textarea name="textarea-input" id="textarea-input" rows="9" placeholder="Type your feedback on the course if you have taken it..." class="form-control"></textarea>
+                                                    <?php
+              
+    ob_start();
+       include "dbconnect.php"; // Using database connection file here
+        ob_end_clean();
+      
+      if(isset($_POST['feed'])){
+        ?>
+       <input type="hidden" name="cid"  value="<?php echo $_POST['courseid'];  ?>">
+        <?php
+           } 
+         ?>
+
+
+                                                </div>
+                                            </div>
+                                             <div class="card-footer">
+                                        <input type="submit" name="feedback" class="btn btn-primary btn-sm">
+                                         
+                                    </div>
+                                    <h6 >
+                                        <?php
+              
+    ob_start();
+       include "dbconnect.php"; // Using database connection file here
+        ob_end_clean();
+         
+ if(isset($_POST['feedback'])){
+    $cid= $_POST['cid'];
+    $feed = $_POST['textarea-input'];
+    $insert = mysqli_query($db,"INSERT INTO `feedbacktable`(`course_id`, `feedback`) VALUES ('$cid','$feed')");
+     if($insert){
+        echo "Your feedback has been added";
+     }
+     else{
+        echo "Your feedback has noot been added";
+     }
+ 
+}
+
+
+
 
 
        //While loop to print out data in a table form
   ?>
-                                            <tr>
-                                                <td><?php echo $data['Courses'];  ?></td>
-                                                
-                                                <td >
-                                                    <form method="POST" action = "typo.php" >
-                                                        <input type="hidden" name="cid"  value="<?php echo $data['Course_Id'];  ?>">
-                                                        <input type="submit" name= "info" value="View more info" class="btn btn-secondary mb-1" data-toggle="tooltip" data-placement="top" title="More info" >
-                                                           
-                                                                
-                                                            
-                                                            
-                                                        
-                                                       </form>
-                                                    
-                                                </td>
-                                                <td >
-                                                    <form method="POST" action = "feedback.php" >
-                                                        <input type="hidden" name="courseid"  value="<?php echo $data['Course_Id'];  ?>">
-                                                        <input type="submit" name= "feed" value="Add Feedback" class="btn btn-secondary mb-1" data-toggle="tooltip" data-placement="top" title="Add Feedback" >
-                                                           
-                                                                
-                                                            
-                                                            
-                                                        
-                                                       </form>
-                                                    
-                                                </td>
-                                            </tr>
-                                           
-                                           
-                                           
-                                            
-                                            
-                                           
-                                        </tbody>
-                                        <?php
-         
-}}
-
-
-?>
-                                    </table>
+                                    </h6>
+                                        </form>
+                                    </div>
+                                   
                                 </div>
-                                             </div>
-                                    
+        </div>
+
+      </div>
+
+    </div>
+
 
 
             <!-- END MAIN CONTENT-->
