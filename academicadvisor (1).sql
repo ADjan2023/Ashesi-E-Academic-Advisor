@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2022 at 04:57 PM
+-- Generation Time: May 09, 2022 at 01:23 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -62,13 +62,23 @@ CREATE TABLE `feedbacktable` (
 --
 
 INSERT INTO `feedbacktable` (`course_id`, `feedback`) VALUES
-('M1000', 'david sampah'),
-('M1000', 'hello'),
-('M1000', 'hello'),
-('M1000', 'i ;ofcytfit'),
-('M1000', 'I toook this course with David Sampah and it was very interesting'),
-('NM2001', 'This is an africana'),
-('M1000', 'This sis George');
+('M1000', 'I took this course and I learnt a lot. The course was taught by Mr David Sampah. We learnt the course in flutter and used android studio. I highly recommend learning about flutter before coming to class so that you do not fall behind. The projects can be a bit tedious but they are very interesting. i hope you enjoy the course if you take it.'),
+('M1000', 'I really loved this course'),
+('M1000', '10 out of 10. I really recommend it'),
+('M1000', 'This course was difficult for me but i really enjoyed it'),
+('M1000', 'You must be really dedicated and consistent to take this course'),
+('M1000', 'Flutter is really interesting but it has its drawbacks'),
+('M1000', 'Happy learning of flutter'),
+('M1000', 'I really loved this course'),
+('M1000', 'I really loved this course'),
+('M1000', 'I love this course too much'),
+('M1000', 'This course is really amazing'),
+('M1000', 'I love this course. I learnt a lot'),
+('M1000', 'I love this course. I learnt a lot'),
+('M1000', 'Ive really enjoyed this course. It is the best'),
+('M1000', 'Ive really enjoyed this course. It is the best'),
+('M1000', 'this is the feedback form'),
+('M1000', 'Ive really enjoyed this course. It is the best');
 
 -- --------------------------------------------------------
 
