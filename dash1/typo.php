@@ -619,7 +619,59 @@ if(isset($_SESSION['email'])) {
                   </div>
                 </div>
 
+  
+                                <div class="au-card au-card--no-shadow au-card--no-pad m-b-40">
+                                    <div class="au-card-title" style="background-image:url('images/bg-title-01.jpg');">
+                                        <div class="bg-overlay bg-overlay--blue"></div>
+                                        <h3>
+                                            <i class="zmdi zmdi-account-calendar"></i>
+                                            FEEDBACK
+                                        </h3>
+                                     
+                                    </div>
+                                    <div class="au-task js-list-load">
+       
+       
+                                        
+                                        <div class="au-task-list js-scrollbar3">
+                                             <?php
+              
+    ob_start();
+       include "../dbconnect.php"; // Using database connection file here
+        ob_end_clean();
+     
+      if(isset($_POST['info'])){
+        $cid=$_POST['cid'];
+            
+          
+        $records1 = mysqli_query($db,"SELECT * FROM feedbacktable where (`course_id`= '$cid') "); // fetch data from database
+        if($records1){
+           
+        while($data = mysqli_fetch_array($records1)){
+            
+            
+         ?>
+                                            <div class="au-task__item au-task__item--danger">
+                                                <div class="au-task__item-inner">
+                                                   
+                                                    <h5 class="task">
+                                                        <a > <?php echo $data['feedback'];  ?> </a>
+                                                    </h5>
 
+                                                </div>
+                                                
+                                            </div>
+                                          <?php
+                                                    }}}
+                                                    ?>
+                                            
+                                        </div>
+                                        <div class="au-task__footer">
+                                            <button class="au-btn au-btn-load js-load-btn">load more</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
               </div>
             </div>
             
@@ -627,8 +679,7 @@ if(isset($_SESSION['email'])) {
  
 
          
-        </div>
-
+    
       </div>
 
     </div>

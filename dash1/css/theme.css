@@ -3296,9 +3296,7 @@ section {
 }
 
 .au-card--bg-blue {
-    background-image: -moz-linear-gradient(90deg, #396afc 0%, #2948ff 100%);
-    background-image: -webkit-linear-gradient(90deg, #396afc 0%, #2948ff 100%);
-    background-image: -ms-linear-gradient(90deg, #396afc 0%, #2948ff 100%);
+    background: #943442;
 }
 
 .au-card-top-countries {
@@ -14575,7 +14573,7 @@ section {
 }
 
 .bg-overlay--blue {
-    background: rgba(49, 89, 253, 0.9);
+    background: #943442;
 }
 
 .bg-c1 {
