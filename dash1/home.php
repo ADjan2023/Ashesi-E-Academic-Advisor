@@ -704,7 +704,7 @@ if(isset($_SESSION['email'])) {
                                         <input type="submit" class="btn btn-secondary mb-1" data-toggle="modal" value="African Culture" name='interest'>
                                         </form>
                                         
-                                        </button>
+                                        
                                         
                                     
                                 
@@ -1002,7 +1002,7 @@ if(isset($_SESSION['email'])) {
 
             <!-- END MAIN CONTENT-->
             <!-- END PAGE CONTAINER-->
-        </div>
+        
 
     
 
