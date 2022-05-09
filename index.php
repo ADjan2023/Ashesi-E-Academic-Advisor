@@ -62,7 +62,7 @@
 							<?php
 							echo $error;
 						
-							mysqli_close($db); // Close connection
+							// mysqli_close($db); // Close connection
 							?>
 						</span>
 						
