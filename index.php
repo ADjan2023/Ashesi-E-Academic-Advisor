@@ -1,4 +1,3 @@
-
 	<?php
 session_start();
 ob_start();
@@ -24,6 +23,34 @@ if(isset($_POST['login']))//Check when the login button is clicked
        header("location:dash1/home.php"); // redirects to members view page
         exit;   
 
+<<<<<<< HEAD
+	<?php
+session_start();
+ob_start();
+    include "dbconnect.php"; // Using database connection file here
+     ob_end_clean();
+     $error = "";
+if(isset($_POST['login']))//Check when the login button is clicked
+{   
+    $email = $_POST['email'];
+    $password = $_POST['pass'];
+    
+    
+    //Queries to check if the user exist and direct the memberes to the members page and the house heads to the admin dashboard
+    $insert = mysqli_query($db,"SELECT * from `login` WHERE (`Email`='$email' AND `Password`= md5('$password'))");
+     if(mysqli_num_rows($insert)==1 )
+    {
+      //Store variables in session
+       $_SESSION['email']= $email;
+        while($data = mysqli_fetch_array($insert)){
+          $_SESSION['ID']= $data['ID'];
+        }
+       
+       header("location:dash1/home.php"); // redirects to members view page
+        exit;   
+
+=======
+>>>>>>> 1a1c4240cead134711fe513ff5c3cebce7dfb495
     }
     else
     {
@@ -33,7 +60,10 @@ if(isset($_POST['login']))//Check when the login button is clicked
      }
 
 ?>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1a1c4240cead134711fe513ff5c3cebce7dfb495
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -134,39 +164,6 @@ if(isset($_POST['login']))//Check when the login button is clicked
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
 
-	<?php
-session_start();
-ob_start();
-    include "dbconnect.php"; // Using database connection file here
-     ob_end_clean();
-     $error = "";
-if(isset($_POST['login']))//Check when the login button is clicked
-{   
-    $email = $_POST['email'];
-    $password = $_POST['pass'];
-    
-    
-    //Queries to check if the user exist and direct the memberes to the members page and the house heads to the admin dashboard
-    $insert = mysqli_query($db,"SELECT * from `login` WHERE (`Email`='$email' AND `Password`= md5('$password'))");
-     if(mysqli_num_rows($insert)==1 )
-    {
-      //Store variables in session
-       $_SESSION['email']= $email;
-        while($data = mysqli_fetch_array($insert)){
-          $_SESSION['ID']= $data['ID'];
-        }
-       
-       header("location:dash1/home.php"); // redirects to members view page
-        exit;   
 
-    }
-    else
-    {
-        $error= "Invalid login details";
-    }
-   
-     }
-
-?>
 </body>
 </html>

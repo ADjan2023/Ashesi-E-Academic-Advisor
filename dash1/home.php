@@ -563,7 +563,6 @@ if(isset($_SESSION['email'])) {
         $records2 = mysqli_query($db,"SELECT count(Stud_ID) FROM student_electives WHERE $id = student_electives.Stud_ID and student_electives.Course_ID LIKE 'M%'");
         $row2 = mysqli_fetch_row($records2);
         echo $row2[0];
-       
 ?></h2>
                                                 <span>Major Electives</span>
                                             </div>
@@ -625,8 +624,7 @@ if(isset($_SESSION['email'])) {
         //Show users name
        $records1 = mysqli_query($db,"SELECT count(Stud_ID) FROM student_electives WHERE $id= student_electives.Stud_ID and student_electives.Course_ID LIKE 'NM%'");
         $row1 = mysqli_fetch_row($records1);
-        echo $row1[0];
-       
+        echo $row1[0];   
 ?></h2>
                                                 <span>Non-Major Electives </span>
                                             </div>
@@ -653,7 +651,6 @@ if(isset($_SESSION['email'])) {
        $records = mysqli_query($db,"SELECT count(Stud_ID) FROM student_electives WHERE $id= student_electives.Stud_ID ");
         $row = mysqli_fetch_row($records);
         echo $row[0];
-       
 ?></h2>
                                                 <span>Electives Completed</span>
                                             </div>
