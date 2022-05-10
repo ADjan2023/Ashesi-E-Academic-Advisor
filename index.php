@@ -23,7 +23,6 @@ if(isset($_POST['login']))//Check when the login button is clicked
        header("location:dash1/home.php"); // redirects to members view page
         exit;   
 
-<<<<<<< HEAD
 	<?php
 session_start();
 ob_start();
@@ -49,8 +48,6 @@ if(isset($_POST['login']))//Check when the login button is clicked
        header("location:dash1/home.php"); // redirects to members view page
         exit;   
 
-=======
->>>>>>> 1a1c4240cead134711fe513ff5c3cebce7dfb495
     }
     else
     {
@@ -60,10 +57,6 @@ if(isset($_POST['login']))//Check when the login button is clicked
      }
 
 ?>
-<<<<<<< HEAD
-
-=======
->>>>>>> 1a1c4240cead134711fe513ff5c3cebce7dfb495
 <!DOCTYPE html>
 <html lang="en">
 <head>
