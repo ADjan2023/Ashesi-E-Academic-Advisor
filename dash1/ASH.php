@@ -180,7 +180,7 @@ if(isset($_SESSION['email'])) {
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li class="has-sub">
-                            <a class="js-arrow" href="#">
+                            <a class="js-arrow" href="home.php">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             <!-- <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
@@ -536,6 +536,7 @@ if(isset($_SESSION['email'])) {
             <!-- MAIN CONTENT-->
         <div class="main-content">
                 <div class="section__content section__content--p30">
+                    <div class="container-fluid">
                     <div class="image-container">
                         <div class="loading">
                             <img src="images/ash.gif" alt="image">

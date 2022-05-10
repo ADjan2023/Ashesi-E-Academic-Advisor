@@ -535,7 +535,7 @@ if(isset($_SESSION['email'])) {
 
             <!-- MAIN CONTENT-->
             <div class="main-content">
-                <div class="section__content section__content--p30">
+                
                     <div class="container-fluid">
                          <div class="table-responsive table--no-card m-b-30">
                                     <table class="table table-borderless table-striped table-earning">
