@@ -19,7 +19,7 @@ function wishMe() {
     }
 
     else if(hr == 12) {
-        speak("Good noon");
+        speak("Good Afternoon");
     }
 
     else if(hr > 12 && hr <= 17) {
@@ -68,6 +68,11 @@ function speakThis(message) {
 
     else if(message.includes('your name') || message.includes('name')) {
         const finalText = "My name is Ash";
+        speech.text = finalText;
+    }
+
+    else if(message.includes('thank you') || message.includes('thanks')) {
+        const finalText = "You are welcome. Have a good day";
         speech.text = finalText;
     }
 
