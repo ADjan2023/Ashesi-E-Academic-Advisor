@@ -108,6 +108,15 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+.ash-elements{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.talk{
+    margin-top: 20px;
+}
+
 h1,
 h2,
 h3,
@@ -318,6 +327,8 @@ section {
 .main-content {
     padding-top: 116px;
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
 }
 
 @media (max-width: 991px) {

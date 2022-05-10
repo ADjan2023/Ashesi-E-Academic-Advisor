@@ -534,13 +534,22 @@ if(isset($_SESSION['email'])) {
             <!-- HEADER DESKTOP-->
 
             <!-- MAIN CONTENT-->
-             <div class="main-content">
+        <div class="main-content">
                 <div class="section__content section__content--p30">
-                    <div class="container-fluid">
-            <button type="button" class="btn btn-primary btn-lg active">Primary</button>
-            </div>
+                    <div class="image-container">
+                        <div class="loading">
+                            <img src="images/ash.gif" alt="image">
+                        </div>
+                    </div>
+        <div class="ash-elements">
+            <h1>A S H</h1>
+            <p>E-Academic Advisor Digital Assistant</p>
+            <button type="button" class="talk btn btn-primary btn-lg active">Click to Talk!</button>       
         </div>
-    </div>
+
+        </div>
+
+        </div>
             <!-- END MAIN CONTENT-->
             <!-- END PAGE CONTAINER-->
         </div>
@@ -571,6 +580,7 @@ if(isset($_SESSION['email'])) {
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
+    <script src="js/app.js"></script>
 
 </body>
 
