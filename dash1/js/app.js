@@ -87,6 +87,16 @@ function speakThis(message) {
         const finalText = "Opening electives panel.";
         speech.text = finalText;
     }
+    else if(message.includes('logout') || message.includes('signout')) {
+        window.open("http://ash-student.herokuapp.com/logout.php", "_blank");
+        const finalText = "Opening electives panel.";
+        speech.text = finalText;
+    }
+    else if(message.includes('track electives')) {
+        window.open("http://ash-student.herokuapp.com/dash1/home.php", "_blank");
+        const finalText = "Opening electives panel.";
+        speech.text = finalText;
+    }
 
     else if(message.includes('what is') || message.includes('who is') || message.includes('what are')) {
         window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
