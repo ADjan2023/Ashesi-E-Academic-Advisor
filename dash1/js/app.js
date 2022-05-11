@@ -87,14 +87,19 @@ function speakThis(message) {
         const finalText = "Opening electives panel.";
         speech.text = finalText;
     }
-    else if(message.includes('logout') || message.includes('signout')) {
+    else if(message.includes('log out') || message.includes('sign out')) {
         window.open("http://ash-student.herokuapp.com/logout.php", "_self");
-        const finalText = "Opening electives panel.";
+        const finalText = "Logging out.";
+        speech.text = finalText;
+    }
+    else if(message.includes('camu') ) {
+        window.open("https://www.mycamu.com/#/");
+        const finalText = "Opening mycamu.";
         speech.text = finalText;
     }
     else if(message.includes('track electives')) {
         window.open("http://ash-student.herokuapp.com/dash1/home.php", "_blank");
-        const finalText = "Opening electives panel.";
+        const finalText = "Opening dashboard panel.";
         speech.text = finalText;
     }
 
