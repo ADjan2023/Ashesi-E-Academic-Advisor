@@ -82,7 +82,7 @@ function speakThis(message) {
         speech.text = finalText;
     }
 
-    else if(message.includes('view electives')) {
+    else if(message.includes('display electives')) {
         window.open("http://ash-student.herokuapp.com/dash1/electives.php", "_blank");
         const finalText = "Opening electives panel.";
         speech.text = finalText;
