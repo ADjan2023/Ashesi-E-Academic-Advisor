@@ -88,7 +88,7 @@ function speakThis(message) {
         speech.text = finalText;
     }
     else if(message.includes('logout') || message.includes('signout')) {
-        window.open("http://ash-student.herokuapp.com/logout.php", "_blank");
+        window.open("http://ash-student.herokuapp.com/logout.php", "_self");
         const finalText = "Opening electives panel.";
         speech.text = finalText;
     }
